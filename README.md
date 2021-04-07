@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @swelarsson
-- 👀 I’m interested in Java and web development
-- 🌱 I’m currently learning Java
-- 💞️ I’m looking to collaborate on programs
+- 👀 I’m interested in Java and Python
+- 🌱 I’m currently learning Java and Python
+- 💞️ I’m looking to collaborate on programs and apps
 - 📫 How to reach me DM, Email or Instagram
 
 <!---
