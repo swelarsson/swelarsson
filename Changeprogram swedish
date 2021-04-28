@@ -1,0 +1,115 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Programmering1
+{
+    class Uppgift1
+    {
+        static void Main(string[] args)
+        {
+            //En variabel för att beräkna totalsumman samt hur mycket man tagit emot.
+            double totalsum;
+            uint amountReceived;
+
+            while (true)
+            {
+                try
+                {
+                    Console.Write(" Ange köpbelopp: "); 
+                    //valde Write för att få texten på samma rad.
+                    totalsum = double.Parse(Console.ReadLine());
+
+                    if (totalsum > 0)
+                    {
+                        break;
+                    }
+                    else //Vid felaktig inmatning
+                    {
+                        Console.BackgroundColor = ConsoleColor.Blue;
+                        Console.Write("Error! Vänligen ange ett giltigt belopp: ");
+                        Console.ResetColor();
+                    }
+                }
+                catch //Vid fel stringtyp
+                {
+                    Console.BackgroundColor = ConsoleColor.Blue;
+                    Console.Write("Ogiltigt! Uppge ett giltigt belopp: ");
+                    Console.ResetColor();
+                }
+            }
+
+            uint subTotalPrice = (uint)Math.Round(totalsum);
+
+            while (true)
+            {
+                try
+                {
+                    Console.Write(" Vänligen ange mottaget belopp: ");
+                    amountReceived = uint.Parse(Console.ReadLine());
+
+                    if (amountReceived >= subTotalPrice)
+                    {
+                        break;
+                    }
+                    else //Vid felaktig inmatning  
+                    {
+                        Console.BackgroundColor = ConsoleColor.Blue;
+                        Console.Write("Error! Vänligen ange giltigt belopp.");
+                        Console.ResetColor();
+                    }
+                }
+                catch //Vid fel string
+                {
+                    Console.BackgroundColor = ConsoleColor.Blue;
+                    Console.Write("FEL! Uppge ett giltigt belopp.");
+                    Console.ResetColor();
+                }
+            }
+
+            double roundingOffAmount = subTotalPrice - totalsum;
+            uint amountBack = amountReceived - subTotalPrice;
+
+            uint fivehundred = amountBack / 500; //modelus som efterfrågades i uppgiften.
+            uint cash = amountBack % 500;
+            uint hundred = cash / 100;
+            cash = cash % 100;
+            uint fifty = cash / 50;
+            cash = cash % 50;
+            uint twenty = cash / 20;
+            cash = cash % 20;
+            uint ten = cash / 10;
+            cash = cash % 10;
+            uint five = cash / 5;
+            cash = cash % 5;
+            uint one = cash / 1;
+            cash = cash % 1;
+	          uint öre = cash / 0.5;
+	          cash = cash % 0.5;
+
+           /*Växeln som blir över efter man betalt.
+           Valde WriteLine för att få texten på raden under istället för Write som tidigare*/
+
+            if (fivehundred > 0)
+            {
+                Console.WriteLine("500-lappar          : {0}", fivehundred);
+            }
+            if (hundred > 0)
+                Console.WriteLine("100-lappar          : {0}", hundred);
+            if (fifty > 0)
+                Console.WriteLine("50-lappar           : {0}", fifty);
+            if (twenty > 0)
+                Console.WriteLine("20-lappar           : {0}", twenty);
+            if (ten > 0)
+                Console.WriteLine("10-kronor           : {0}", ten);
+            if (five > 0)
+                Console.WriteLine("5-kronor            : {0}", five);
+            if (one > 0)
+                Console.WriteLine("1-kronor            : {0}", one);
+	           if (öre > 0)
+	    	         Console.WriteLine("50-öre	           : {0}", öre);
+        }
+    }
+}
