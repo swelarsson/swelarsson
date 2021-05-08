@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @swelarsson
+- 👋 Hi, my name is Dennis and live in north of sweden
 - 👀 I’m interested in Fullstack and Game Development 
 - 🌱 I’m currently learning Java and C#
 - 💞️ I’m looking to collaborate on programs and apps
